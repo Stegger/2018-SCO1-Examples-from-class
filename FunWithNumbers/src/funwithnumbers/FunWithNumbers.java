@@ -18,8 +18,9 @@ import javafx.stage.Stage;
 public class FunWithNumbers extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("BmiCalculator.fxml"));
+    public void start(Stage stage) throws Exception 
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
