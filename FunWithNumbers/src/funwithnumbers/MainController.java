@@ -35,27 +35,33 @@ public class MainController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         // TODO
-    }    
+    }
 
     @FXML
     private void handleDistanceConversion(ActionEvent event) throws IOException
     {
-//        Stage stage = new Stage();
-        Stage stage = (Stage)rootPane.getScene().getWindow();
+        Stage stage = (Stage) rootPane.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("NumberConversion.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-//        stage.show();
     }
 
     @FXML
-    private void handleTempConversion(ActionEvent event)
+    private void handleTempConversion(ActionEvent event) throws IOException
     {
+        Stage stage = (Stage) rootPane.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("TemperatureConversionView.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     @FXML
-    private void handleBMICalc(ActionEvent event)
+    private void handleBMICalc(ActionEvent event) throws IOException
     {
+        Stage stage = (Stage) rootPane.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("BmiCalculator.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
-    
+
 }
