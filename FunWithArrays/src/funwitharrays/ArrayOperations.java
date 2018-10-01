@@ -17,33 +17,76 @@ public class ArrayOperations
     private int[] numbers;
 
     /**
-     * Create an instance of the ArrayOperations class, containing an array of length numberOfElements.
+     * Create an instance of the ArrayOperations class, containing an array of
+     * length numberOfElements.
+     *
      * @param numberOfElements The length to initialize numbers with.
      */
     public ArrayOperations(int numberOfElements)
     {
         numbers = new int[numberOfElements];
         Random rnd = new Random();
-        for(int i = 0; i < numbers.length;i++)
+        for (int i = 0; i < numbers.length; i++)
         {
             numbers[i] = rnd.nextInt();
         }
     }
 
     /**
-     * Create an instance of the ArrayOperations class, containing an array of length numberOfElements. Also initializes values of number to be random values in the interval between minimumValue and maximumValue.
+     * Create an instance of the ArrayOperations class, containing an array of
+     * length numberOfElements. Also initializes values of number to be random
+     * values in the interval between minimumValue and maximumValue.
+     *
      * @param numberOfElements The length to initialize numbers with.
-     * @param minimumValue The minimumValue the object can contain.
-     * @param maximumValue The maximumValue the object can contain.
+     * @param minimumValue The minimumValue the object can contain. (Inclusive)
+     * @param maximumValue The maximumValue the object can contain. (Inclusive)
      */
     public ArrayOperations(int numberOfElements, int minimumValue, int maximumValue)
     {
-        //What todo?
+        numbers = new int[numberOfElements];
+        Random rnd = new Random();
+        for (int i = 0; i < numbers.length; i++)
+        {
+            numbers[i] = rnd.nextInt(maximumValue - minimumValue + 1) + minimumValue;
+        }
     }
 
-    public void printArray()
+    /**
+     * Counts the number of occurrences of the number number.
+     *
+     * @param number The number to search for.
+     * @return The count of the number value in the numbers array.
+     */
+    public int getNumberOf(int number)
     {
-        //What todo?
+        int countOfNumber = 0; //We initialise the count to zero.
+        for (int nr : numbers)
+        {
+            if (nr == number)
+            {
+                countOfNumber++;
+            }
+        }
+        return countOfNumber;
     }
 
+    /**
+     * Returns a formatted view of the numbers in the array.
+     *
+     * @return
+     */
+    public String printArray()
+    {
+        String output = "{ ";
+        for (int x : numbers)
+        {
+            output += x + " ";
+        }
+        output += "}";
+        return output;
+    }
+
+    
+    
+    
 }

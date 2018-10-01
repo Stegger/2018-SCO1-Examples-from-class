@@ -72,8 +72,15 @@ public class FunWithArrays
      */
     public static void main(String[] args)
     {
-        FunWithArrays.exampleOne(); //Runs the first example from class
-        FunWithArrays.exampleTwo(); //Runs the second example from class
+//        FunWithArrays.exampleOne(); //Runs the first example from class
+//        FunWithArrays.exampleTwo(); //Runs the second example from class
+        
+        ArrayOperations arrOps = new ArrayOperations(50, 1, 10); 
+        System.out.println(arrOps.printArray());
+        
+        int countOfFives = arrOps.getNumberOf(5);
+        System.out.println("The amount og fives is " + countOfFives);
+        
         
         
     }
