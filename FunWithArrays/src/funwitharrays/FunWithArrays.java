@@ -5,6 +5,9 @@
  */
 package funwitharrays;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /**
  *
  * @author pgn
@@ -67,6 +70,36 @@ public class FunWithArrays
 
     }
 
+    public static void exampleThree()
+    {
+        Wombat[] wombats = new Wombat[10];
+        wombats[0] = new Wombat("Jeppe", 37);
+
+        ArrayList<Wombat> runningWombats = new ArrayList<>();
+        runningWombats.add(new Wombat("Peter", 34));
+        runningWombats.add(new Wombat("Henrik", 51));
+        System.out.println("Size of running wombats: " + runningWombats.size());
+        System.out.println("Name of wombat at index 1: " + runningWombats.get(1).getName());
+        runningWombats.remove(1);
+        System.out.println("Size after delete: " + runningWombats.size());
+
+        LinkedList<Wombat> alsoRunningWombats = new LinkedList<>();
+        alsoRunningWombats.add(new Wombat("Lars", 42));
+        alsoRunningWombats.add(0, new Wombat("Stig", 45));
+        System.out.println("Size of also running wombats: " + alsoRunningWombats.size());
+        System.out.println("Name of also wombat at index 1: " + alsoRunningWombats.get(1).getName());
+        alsoRunningWombats.remove(1);
+        System.out.println("Size after also delete: " + alsoRunningWombats.size());
+
+        ArrayList<Integer> manyIntegers = new ArrayList<>();
+        manyIntegers.add(new Integer(5));
+        manyIntegers.add(new Integer(13));
+        System.out.println("Size of also running wombats: " + manyIntegers.size());
+        System.out.println("Number at index 1: " + manyIntegers.get(1).toString());
+        manyIntegers.remove(1);
+        System.out.println("Sise after Integer delete: " + manyIntegers.size());
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -74,15 +107,13 @@ public class FunWithArrays
     {
 //        FunWithArrays.exampleOne(); //Runs the first example from class
 //        FunWithArrays.exampleTwo(); //Runs the second example from class
-        
-        ArrayOperations arrOps = new ArrayOperations(50, 1, 10); 
+
+        ArrayOperations arrOps = new ArrayOperations(50, 1, 10);
         System.out.println(arrOps.printArray());
-        
+
         int countOfFives = arrOps.getNumberOf(5);
         System.out.println("The amount og fives is " + countOfFives);
-        
-        
-        
+
     }
 
 }
