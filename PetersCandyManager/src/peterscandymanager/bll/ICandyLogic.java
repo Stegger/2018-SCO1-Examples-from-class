@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package peterscandymanager;
+package peterscandymanager.bll;
 
 import java.util.List;
+import peterscandymanager.be.Candy;
 
 /**
  *
@@ -13,15 +14,9 @@ import java.util.List;
  */
 public interface ICandyLogic
 {
-    
-    public void feedJeppe(Candy candy);
-    
+
     public List<Candy> getAllCandy();
-    
-    public List<Candy> getAllCandy(double maximuPrice);
-    
-    public void eatCandy(Candy candy);
-    
-    public Candy createCandy(String name, double price);
-    
+
+    public Candy createCandy(String name, double yummy, double sugar);
+
 }
