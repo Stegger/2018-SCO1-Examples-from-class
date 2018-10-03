@@ -111,7 +111,7 @@ public class Candy
     @Override
     public String toString()
     {
-        return "Candy{" + "name=" + name + ", price=" + price + ", yumminess=" + yumminess + ", sugarPer100g=" + sugarPer100g + '}';
+        return name + ", price=" + price + ", yummy=" + yumminess + ", sugar g/100g=" + sugarPer100g;
     }
 
 }

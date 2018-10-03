@@ -5,11 +5,28 @@
  */
 package peterscandymanager.bll;
 
+import java.util.List;
+import peterscandymanager.be.Candy;
+
 /**
  *
  * @author pgn
  */
-public class ILikeYummyMgr
+public class ILikeYummyMgr implements ICandyLogic
 {
+
+    @Override
+    public List<Candy> getAllCandy()
+    {
+        //TODO
+        return null;
+    }
+
+    @Override
+    public Candy createCandy(String name, double yummy, double sugar)
+    {
+        //TODO
+        return null;
+    }
     
 }

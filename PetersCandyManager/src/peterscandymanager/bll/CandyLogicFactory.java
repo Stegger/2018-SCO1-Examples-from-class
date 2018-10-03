@@ -13,28 +13,42 @@ import java.util.HashMap;
  */
 public class CandyLogicFactory
 {
+
     public static final String I_DONT_LIKE_CANDY = "I don't like candy";
     public static final String I_LIKE_SUGAR = "I like sugar";
     public static final String I_LIKE_YUMMY = "I like yummy";
-    
-    private static final HashMap<String, ICandyLogic> instantiatedCandyLogic =  new HashMap<>();
-    
+
+    private static final HashMap<String, ICandyLogic> instantiatedCandyLogic = new HashMap<>();
+
+    /**
+     * Creates and returns a new ICandyLogic.
+     *
+     * @param name The name and type of candy logic to get.
+     * @return The CandyLogic that corresponds to the given name.
+     */
     public static ICandyLogic getCandyLogic(String name)
     {
-        if(instantiatedCandyLogic.containsKey(name))
+        if (instantiatedCandyLogic.containsKey(name))
+        {
             return instantiatedCandyLogic.get(name);
-        else
+        } else
         {
             ICandyLogic newCandyLogic;
             switch (name)
             {
-                case I_DONT_LIKE_CANDY:
+                case I_LIKE_SUGAR:
+                    newCandyLogic = new ILikeSugarCandyMgr();
+                    break;
+                case I_LIKE_YUMMY:
+                    newCandyLogic = new ILikeYummyMgr();
+                    break;
+                default:
                     newCandyLogic = new IDontLikeCandyMgr();
-                    instantiatedCandyLogic.put(name, newCandyLogic); 
-                    return newCandyLogic;
+                    break;
             }
+            instantiatedCandyLogic.put(name, newCandyLogic);
+            return newCandyLogic;
         }
-        return null;
     }
-    
+
 }

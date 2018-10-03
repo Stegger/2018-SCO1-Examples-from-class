@@ -8,7 +8,6 @@ package peterscandymanager.gui.controller;
 import peterscandymanager.be.Candy;
 import peterscandymanager.bll.ICandyLogic;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
-import peterscandymanager.bll.IDontLikeCandyMgr;
+import peterscandymanager.bll.CandyLogicFactory;
 
 /**
  *
@@ -43,7 +42,7 @@ public class CandyController implements Initializable
 
     public CandyController()
     {
-        manager = new IDontLikeCandyMgr();
+        manager = CandyLogicFactory.getCandyLogic(CandyLogicFactory.I_DONT_LIKE_CANDY);
     }
 
     @Override
