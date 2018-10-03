@@ -17,6 +17,12 @@ public class CandyLogicFactory
     public static final String I_DONT_LIKE_CANDY = "I don't like candy";
     public static final String I_LIKE_SUGAR = "I like sugar";
     public static final String I_LIKE_YUMMY = "I like yummy";
+    public static final String I_LIKE_ICE = "I like ice";
+
+    private static final String[] MANAGERS =
+    {
+        I_DONT_LIKE_CANDY, I_LIKE_SUGAR, I_LIKE_YUMMY, I_LIKE_ICE
+    };
 
     private static final HashMap<String, ICandyLogic> instantiatedCandyLogic = new HashMap<>();
 
@@ -42,6 +48,9 @@ public class CandyLogicFactory
                 case I_LIKE_YUMMY:
                     newCandyLogic = new ILikeYummyMgr();
                     break;
+                case I_LIKE_ICE:
+                    newCandyLogic = new ILikeIceMgr();
+                    break;
                 default:
                     newCandyLogic = new IDontLikeCandyMgr();
                     break;
@@ -49,6 +58,11 @@ public class CandyLogicFactory
             instantiatedCandyLogic.put(name, newCandyLogic);
             return newCandyLogic;
         }
+    }
+
+    public static String[] getAllManagerNames()
+    {
+        return MANAGERS;
     }
 
 }

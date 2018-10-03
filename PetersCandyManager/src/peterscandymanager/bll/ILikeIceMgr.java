@@ -12,21 +12,22 @@ import peterscandymanager.be.Candy;
  *
  * @author pgn
  */
-public class ILikeSugarCandyMgr implements ICandyLogic
+public class ILikeIceMgr implements ICandyLogic
 {
 
     @Override
     public List<Candy> getAllCandy()
     {
-        //TODO
-        return null;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Candy createCandy(String name, double yummy, double sugar)
     {
-        double price = 5 * sugar + yummy;
+        int x = 5;
+        double price = name.contains("ice") ? 500 : 10;
         return new Candy(name, price, yummy, sugar);
     }
 
+    
 }
