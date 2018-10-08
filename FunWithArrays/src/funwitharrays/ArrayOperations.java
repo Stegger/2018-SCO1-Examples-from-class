@@ -86,7 +86,18 @@ public class ArrayOperations
         return output;
     }
 
-    
-    
-    
+    /**
+     * Reverses the values in the numbers array.
+     */
+    public void reverse()
+    {
+        int tmp;
+        for (int i = 0; i < numbers.length / 2; i++)
+        {
+            tmp = numbers[i];
+            numbers[i] = numbers[numbers.length - 1 - i];
+            numbers[numbers.length - 1 - i] = tmp;
+        }
+    }
+
 }
