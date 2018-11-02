@@ -17,9 +17,10 @@ public class Person
     private String email;
 
     /**
-     * Constructs 
+     * Constructs
+     *
      * @param id
-     * @param name 
+     * @param name
      */
     public Person(int id, String name)
     {
@@ -28,9 +29,10 @@ public class Person
 
     /**
      * Constructs a person.
+     *
      * @param id
      * @param name
-     * @param email 
+     * @param email
      */
     public Person(int id, String name, String email)
     {
@@ -38,8 +40,7 @@ public class Person
         this.name = name;
         this.email = email;
     }
-   
-    
+
     /**
      * Get the value of email
      *
@@ -83,9 +84,8 @@ public class Person
     @Override
     public String toString()
     {
-        return "Person{" + "id=" + id + ", name=" + name + ", email=" + email + '}';
+        String output = String.format("%-4s%-25s%-25s", id, name, email);
+        return output;
     }
-    
-    
-    
+
 }
